@@ -20,8 +20,9 @@ export class LivroComponent implements OnInit {
 
   onSubscribe() {
     this.livrosService.getLivros().subscribe(result => {
-      console.log(result);
-      this.livro = result;
+      result.map((livros) => {
+        console.log(livros);
+      });
     });
   }
 }
